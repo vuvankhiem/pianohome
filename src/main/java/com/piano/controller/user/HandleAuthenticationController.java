@@ -8,9 +8,6 @@ package com.piano.controller.user;
 import com.piano.dao.UserDAO;
 import com.piano.dto.UserDTO;
 import com.piano.entity.User;
-import java.security.Principal;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -19,8 +16,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.security.Principal;
+import java.util.regex.Pattern;
+
 /**
- *
  * @author Administrator
  */
 @Controller
@@ -49,13 +51,13 @@ public class HandleAuthenticationController {
         if (err != null) {
             model.addAttribute("err", "Tài khoản hoặc mật khẩu không đúng !");
         }
-        
+
         return "user/login";
     }
 
 
     @RequestMapping("/login-sucess")
-    public String loginSucess(Principal principal,HttpSession session){
+    public String loginSucess(Principal principal, HttpSession session) {
         String email = principal.getName();
         User user = userDAO.getUserByEmail(email);
         UserDTO userDTO = new UserDTO();
@@ -64,48 +66,27 @@ public class HandleAuthenticationController {
         userDTO.setFirstName(user.getFirstName());
         userDTO.setLastName(user.getLastName());
         session.setAttribute("us", userDTO);
-        if(user.getRole().equals("ADMIN")){
+        if (user.getRole().equals("ADMIN")) {
             return "redirect:/admin";
         }
         return "redirect:/home";
     }
+
     //Register Account
     @RequestMapping(value = "/register")
     public String register(@RequestParam(name = "first_name", required = false) String firstName,
-            @RequestParam(name = "last_name", required = false) String lastName,
-            @RequestParam(name = "role", required = false, defaultValue = "USER") String role,
-            @RequestParam(name = "password", required = false) String password,
-            @RequestParam(name = "confirm-password", required = false) String confirm_password,
-            @RequestParam(name = "email", required = false) String email,
-            @RequestParam(name = "confirm", required = false, defaultValue = "false") boolean confirm,
-            Model model) {
+                           @RequestParam(name = "last_name", required = false) String lastName,
+                           @RequestParam(name = "role", required = false, defaultValue = "USER") String role,
+                           @RequestParam(name = "password", required = false) String password,
+                           @RequestParam(name = "confirm-password", required = false) String confirm_password,
+                           @RequestParam(name = "email", required = false) String email,
+                           @RequestParam(name = "confirm", required = false, defaultValue = "false") boolean confirm,
+                           Model model,
+                           HttpServletRequest request) {
+        Pattern p = Pattern.compile("^<script>|</script>$");
+
         if (confirm == true || email != null) {
-
             User user = userDAO.getUserByEmail(email);
-            if (user.getUserID() == 0 && email != null) {
-
-                if (password.equals(confirm_password)) {
-                    encode = passwordEncoder.encode(password);
-                    f_name = firstName;
-                    l_name = lastName;
-                    emailS = email;
-                    roleS = role;
-
-                    String confirm_link = "Click link : " + "http://localhost:8080/khiem/register?confirm=true" + " để xác thực ";
-                    SimpleMailMessage message = new SimpleMailMessage();
-                    message.setTo(email);
-                    message.setSubject("Xác thực tài khoản");
-                    message.setText(confirm_link);
-                    this.javaMailSender.send(message);
-                    model.addAttribute("notify", "Đăng kí thành công. Quý khách vui lòng xác thực tài khoản trong Gmail !");
-                    return "user/login";
-                } else {
-                    model.addAttribute("err", "Mật khẩu không khớp");
-                }
-
-            } else if (user.getUserID() != 0) {
-                model.addAttribute("err", "Tài khoản của bạn đã tồn tại");
-            }
             if (confirm == true) {
                 user.setFirstName(f_name);
                 user.setLastName(l_name);
@@ -116,6 +97,43 @@ public class HandleAuthenticationController {
                 userDAO.addUser(user);
                 return "user/login";
             }
+            if(p.matcher(firstName).find()||p.matcher(lastName).find()){
+                model.addAttribute("err", "FirstName hoặc LastName không hợp lệ");
+                return "user/register";
+            }else {
+
+                if (user.getUserID() == 0 && email != null) {
+
+                    if (password.equals(confirm_password)) {
+                        encode = passwordEncoder.encode(password);
+                        f_name = firstName;
+                        l_name = lastName;
+                        emailS = email;
+                        roleS = role;
+
+                        String link = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath()+"/register?confirm=true";
+                        System.out.println(link);
+                        String confirm_link = "Click link : " + link + " để xác thực ";
+                        SimpleMailMessage message = new SimpleMailMessage();
+                        message.setTo(email);
+                        message.setSubject("Xác thực tài khoản");
+                        message.setText(confirm_link);
+                        this.javaMailSender.send(message);
+                        model.addAttribute("notify", "Đăng kí thành công. Quý khách vui lòng xác thực tài khoản trong Gmail !");
+                        return "user/login";
+                    } else {
+                        model.addAttribute("err", "Mật khẩu không khớp");
+                    }
+
+                } else if (user.getUserID() != 0) {
+                    model.addAttribute("err", "Tài khoản của bạn đã tồn tại");
+                }
+
+            }
+
+
+
+
         }
 
         return "user/register";
@@ -123,20 +141,23 @@ public class HandleAuthenticationController {
 
     @RequestMapping("/forgot-password")
     public String forgotPass(Model model,
-            @RequestParam(name = "password", required = false) String password,
-            @RequestParam(name = "confirm-password", required = false) String confirm_password,
-            @RequestParam(name = "email", required = false) String email,
-            @RequestParam(name = "confirm", required = false, defaultValue = "false") boolean confirm) {
+                             @RequestParam(name = "password", required = false) String password,
+                             @RequestParam(name = "confirm-password", required = false) String confirm_password,
+                             @RequestParam(name = "email", required = false) String email,
+                             @RequestParam(name = "confirm", required = false, defaultValue = "false") boolean confirm,
+                             HttpServletRequest request) {
 
         User user = new User();
-        if (email != null||confirm==true) {
-            
+        if (email != null || confirm == true) {
+
             user = userDAO.getUserByEmail(email);
             if (user.getEmail() != null) {
                 if (password.equals(confirm_password)) {
                     encode = passwordEncoder.encode(password);
                     emailS = email;
-                    String confirm_link = " Click link : " + "http://localhost:8080/khiem/forgot-password?confirm=true" + " để xác thực";
+                    String link = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() +"/forgot-password?confirm=true";
+
+                    String confirm_link = " Click link : " + link + " để xác thực";
                     SimpleMailMessage message = new SimpleMailMessage();
                     message.setTo(email);
                     message.setSubject("Xác thực tài khoản");

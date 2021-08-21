@@ -115,7 +115,7 @@ public class ManageProductController {
         product.setFulldescription(long_des);
         product.setSpec(spec);
         manageProductService.saveProduct(product);
-        return "redirect:/manage-product";
+        return "redirect:manage-product";
     }
 
     @RequestMapping("admin/update-product")

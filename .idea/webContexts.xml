@@ -6,10 +6,13 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/admin-add-update-news.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/admin-contact-detail.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/admin-dashboard.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/admin-manage-account.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/admin-manage-contact.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin/admin-view-product.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/cart.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/layout/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/layout" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user/product-detail.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user" />
       </map>
     </option>
   </component>

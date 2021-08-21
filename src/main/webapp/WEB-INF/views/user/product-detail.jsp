@@ -229,16 +229,16 @@
 
                                                                         <div class="spr-form-review-title">
                                                                             <label class="spr-form-label" for="review_title_10508262282">Tiêu đề</label>
-                                                                            <input class="spr-form-input spr-form-input-text " id="review_title_10508262282" type="text" name="title" value="" placeholder="Give your review a title" required>
+                                                                            <input class="spr-form-input spr-form-input-text " id="review_title_10508262282" type="text" name="title" value="" placeholder="" required>
                                                                         </div>
 
                                                                         <div class="spr-form-review-body">
                                                                             <label class="spr-form-label" for="review_body_10508262282">
                                                                                 Đánh giá
-                                                                                <span class="spr-form-review-body-charactersremaining">(1500)</span>
+                                                                                <span class="spr-form-review-body-charactersremaining"></span>
                                                                             </label>
                                                                             <div class="spr-form-input">
-                                                                                <textarea class="spr-form-input spr-form-input-textarea " id="review_body_10508262282" data-product-id="10508262282" name="review" rows="5" placeholder="Write your comments here" required></textarea>
+                                                                                <textarea class="spr-form-input spr-form-input-textarea " id="review_body_10508262282" data-product-id="10508262282" name="review" rows="5" placeholder="Write your comments here" required aria-placeholder="Khoảng 1500 kí tự"></textarea>
                                                                             </div>
                                                                         </div>
                                                                     </fieldset>

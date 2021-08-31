@@ -38,11 +38,13 @@ public class ProductDetailController {
     @RequestMapping(value = "/product-review")
     public String review(
             HttpServletRequest request,
-            @RequestParam(name = "rate",required = false) int rate,
+            @RequestParam(name = "rate",required = false,defaultValue = "0") int rate,
             @RequestParam(name = "email",required = false) String email,
-            @RequestParam(name = "p_id",required = false) int p_id
+            @RequestParam(name = "p_id",required = false,defaultValue = "0") int p_id
             ) throws UnsupportedEncodingException{
-        
+        if(rate==0||email==null||p_id==0){
+            return "redirect:/home";
+        }
         request.setCharacterEncoding("UTF-8");
         
         String title = request.getParameter("title");

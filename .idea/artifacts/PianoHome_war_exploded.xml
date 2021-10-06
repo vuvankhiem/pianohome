@@ -6,6 +6,7 @@
         <exploded>true</exploded>
         <module>PianoHome</module>
         <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
@@ -73,6 +74,7 @@
           <element id="library" level="project" name="Maven: javax.mail:javax.mail-api:1.5.5" />
           <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.7" />
         </element>
       </element>
       <element id="directory" name="META-INF">

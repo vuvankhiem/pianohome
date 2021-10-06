@@ -85,11 +85,11 @@ public class CheckOutController {
                     checkOutService.AddOrderDetail(orderdetail);
                 }
 
-                String mes = "Chung toi se som lien lac lai voi ban."
-                        + "Don hang cua ban se duoc cap nhat lien tuc tai dia chi email : " + email;
+                String mes = "Chúng tôi sẽ sớm liên lạc lại với bạn."
+                        + " Quá trình xử lý đơn hàng của bạn sẽ được cập nhật liên tục tại địa chỉ email : " + email;
                 SimpleMailMessage message = new SimpleMailMessage();
                 message.setTo(email);
-                message.setSubject("Cam on ban da mua hang tai Piano Home");
+                message.setSubject("Cảm ơn bạn đã mua hàng tại Piano Home");
                 message.setText(mes);
                 this.javaMailSender.send(message);
                 return "redirect:/home";

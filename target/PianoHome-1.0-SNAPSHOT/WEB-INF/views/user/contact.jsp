@@ -68,7 +68,7 @@
                                     <div class="row">
                                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                             <div class="form-group">
-                                                <input type="text" id="ContactFormName" name="name" placeholder="Name" value="${sessionScope.us.lastName}" required>
+                                                <input type="text" id="ContactFormName" name="name" placeholder="Họ tên" value="${sessionScope.us.lastName}" required>
                                             </div>
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
@@ -80,25 +80,25 @@
                                     <div class="row">
                                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                             <div class="form-group">
-                                                <input required="" type="tel" id="ContactFormPhone" name="phone" pattern="[0-9\-]*" placeholder="Phone Number" value="">
+                                                <input required="" type="tel" id="ContactFormPhone" name="phone" pattern="[0-9\-]*" placeholder="Số điện thoại liên lạc" value="">
                                             </div>
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                             <div class="form-group">
-                                                <input required="" type="text" id="ContactSubject" name="subject" placeholder="Subject" value="">
+                                                <input required="" type="text" id="ContactSubject" name="subject" placeholder="Tiêu đề" value="">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                                             <div class="form-group">
-                                                <textarea required="" rows="10" id="ContactFormMessage" name="message" placeholder="Your Message"></textarea>
+                                                <textarea required="" rows="10" id="ContactFormMessage" name="message" placeholder="Tin nhắn"></textarea>
                                             </div>
                                         </div>  
                                     </div>
                                     <div class="row">
                                         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                                            <input type="submit" class="btn" value="Send Message">
+                                            <input type="submit" class="btn" value="Gửi tin nhắn">
                                         </div>
                                     </div>
                                 </form>

@@ -25,11 +25,7 @@
         <!-- Main Style CSS -->
         <link rel="stylesheet" href="${pageContext.request.contextPath}/us/assets/css/style.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/us/assets/css/responsive.css">
-        <c:if test="${notify!=null}">
-            <script type="text/javascript">
-                alert("Vui lòng xác thực tài khoản của ban trong gmail");
-            </script>
-        </c:if>
+
 
     </head>
     <body class="page-template belle">
@@ -62,7 +58,7 @@
                                             </div>
                                             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                                                 <div class="form-group">
-                                                    <label for="CustomerPassword">Password</label>
+                                                    <label for="CustomerPassword">Mật khẩu</label>
                                                     <input type="password" name="password" required>                        	
                                                 </div>
                                             </div>
@@ -80,10 +76,10 @@
                                     </div>
                                     <div class="row">
                                         <div class="text-center col-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 13px;">
-                                            <input type="submit" class="btn mb-3" value="Sign In">
+                                            <input type="submit" class="btn mb-3" value="Đăng nhập">
                                             <p class="mb-4">
-                                                <a href="forgot-password" id="RecoverPassword">Forgot your password?</a> &nbsp; | &nbsp;
-                                                <a href="register" id="customer_register_link">Create account</a>
+                                                <a href="forgot-password" id="RecoverPassword">Quên mật khẩu ?</a> &nbsp; | &nbsp;
+                                                <a href="register" id="customer_register_link">Tạo tài khoản</a>
                                             </p>
                                         </div>
                                     </div>

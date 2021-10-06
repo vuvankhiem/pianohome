@@ -25,7 +25,11 @@
         <!-- Main Style CSS -->
         <link rel="stylesheet" href="${pageContext.request.contextPath}/us/assets/css/style.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/us/assets/css/responsive.css">
-
+        <c:if test="${notify!=null}">
+            <script type="text/javascript">
+                alert("Vui lòng xác thực tài khoản của bạn trong gmail");
+            </script>
+        </c:if>
     </head>
     <body class="page-template belle">
         <div class="pageWrapper">
@@ -51,13 +55,13 @@
                                         <div class="row">
                                             <div class="col-8 col-sm-8 col-md-8 col-lg-8">
                                                 <div class="form-group">
-                                                    <label for="FirstName">First Name</label>
+                                                    <label for="FirstName">Họ đệm</label>
                                                     <input type="text" name="first_name" placeholder="" id="FirstName" required>
                                                 </div>
                                             </div>
                                             <div class="col-8 col-sm-8 col-md-8 col-lg-8">
                                                 <div class="form-group">
-                                                    <label for="LastName">Last Name</label>
+                                                    <label for="LastName">Tên</label>
                                                     <input type="text" name="last_name" placeholder="" id="LastName" required>
                                                 </div>
                                             </div>
@@ -69,13 +73,13 @@
                                             </div>
                                             <div class="col-8 col-sm-8 col-md-8 col-lg-8">
                                                 <div class="form-group">
-                                                    <label for="CustomerPassword">Password</label>
+                                                    <label for="CustomerPassword">Mật khẩu</label>
                                                     <input id="pw" type="password" name="password" required>                        	
                                                 </div>
                                             </div>
                                             <div class="col-8 col-sm-8 col-md-8 col-lg-8">
                                                 <div class="form-group">
-                                                    <label for="CustomerPassword">Confirm Password</label>
+                                                    <label for="CustomerPassword">Xác minh mật khẩu</label>
                                                     <input type="password" name="confirm-password" required>                        	
                                                 </div>
                                             </div>
@@ -88,7 +92,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="text-center col-8 col-sm-8 col-md-8 col-lg-8" style="margin-top: 13px;">
-                                            <input class="btn mb-3" type="submit" value="Sign Up">
+                                            <input class="btn mb-3" type="submit" value="Đăng kí">
                                         </div>
                                     </div>
                                 </form>

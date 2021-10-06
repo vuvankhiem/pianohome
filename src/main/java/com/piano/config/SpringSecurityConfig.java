@@ -50,7 +50,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
                 .csrf().disable()
                 .addFilterBefore(new EncodingFilter(), ChannelProcessingFilter.class)
                 .authorizeRequests()
-                .antMatchers("/","/home","/product-detail","/redirect","/shop","/403","/404","/register","/forgot-password","/check-out","/wish-list/**","/cart/**","/contact-us","/about-us","/news","/image/**").permitAll()
+                .antMatchers("/","/home","/product-detail","/redirect","/shop","/403","/404","/register/**","/forgot-password/**","/check-out","/wish-list/**","/cart/**","/contact-us","/about-us","/news","/image/**").permitAll()
                 .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated()
                 .and()

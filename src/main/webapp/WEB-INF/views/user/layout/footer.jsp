@@ -13,7 +13,7 @@
             <div class="footer-top">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                        <h4 class="h4">Quick Shop</h4>
+                        <h4 class="h4">Danh mục sản phẩm</h4>
                         <ul>
                             <li><a href="#">Grand Piano</a></li>
                             <li><a href="#">Upright Piano</a></li>
@@ -22,26 +22,25 @@
                         </ul>
                     </div>
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                        <h4 class="h4">Informations</h4>
+                        <h4 class="h4">Thông tin</h4>
                         <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Privacy policy</a></li>
-                            <li><a href="#">Terms &amp; condition</a></li>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Chính sách bảo hành</a></li>
+                            <li><a href="#">Liên lạc</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
-                        <h4 class="h4">Customer Services</h4>
+                        <h4 class="h4">Dịch vụ</h4>
                         <ul>
-                            <li><a href="#">Request Personal Data</a></li>
-                            <li><a href="#">FAQ's</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Orders and Returns</a></li>
-                            <li><a href="#">Support Center</a></li>
+                            <li><a href="#">Hỗ trợ 24/7</a></li>
+                            <li><a href="#">Thanh toán online</a></li>
+                            <li><a href="#">Trả góp</a></li>
+                            <li><a href="#">Đặt hàng và hoàn trả</a></li>
+
                         </ul>
                     </div>
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
-                        <h4 class="h4">Contact Us</h4>
+                        <h4 class="h4">Thông tin liên lạc</h4>
                         <ul class="addressFooter">
                             <li><i class="icon anm anm-map-marker-al"></i><p>Phú Xuyên <br>,Hà Nội</p></li>
                             <li class="phone"><i class="icon anm anm-phone-s"></i><p>(+84) 0123456789</p></li>

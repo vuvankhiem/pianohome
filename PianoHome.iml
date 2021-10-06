@@ -20,7 +20,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="PianoHome" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -102,5 +104,6 @@
     <orderEntry type="library" name="Maven: javax.mail:javax.mail-api:1.5.5" level="project" />
     <orderEntry type="library" name="Maven: javax.mail:mail:1.4.7" level="project" />
     <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.7" level="project" />
   </component>
 </module>

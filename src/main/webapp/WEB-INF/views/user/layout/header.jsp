@@ -11,7 +11,7 @@
     <div class="search__form">
         <form class="search-bar__form" action="shop">
             <button class="go-btn search__button" type="submit"><i class="icon anm anm-search-l"></i></button>
-            <input class="search__input" type="search" name="txt_search" value="" placeholder="Search entire store..." aria-label="Search" autocomplete="off">
+            <input class="search__input" type="search" name="txt_search" value="" placeholder="Tìm kiếm ..." aria-label="Search" autocomplete="off">
         </form>
         <button type="button" class="search-trigger close-btn"><i class="anm anm-times-l"></i></button>
     </div>

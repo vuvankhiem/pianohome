@@ -16,7 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="PianoHome" options="-endorseddirs C:\Users\Administrator\Documents\NetBeansProjects\pianohome\target/endorsed" />
+      <module name="PianoHome" options="-endorseddirs C:\Users\Administrator\Desktop\pianohome\target/endorsed" />
     </option>
   </component>
 </project>
